@@ -22,9 +22,9 @@ Doctors can log in.
 
 Routes:
 
-- /doctors/register → with username and password
-- /doctors/login → returns the JWT to be used
-- /patients/register
-- /patients/:id/create_report
-- /patients/:id/all_reports → List all the reports of a patient oldest to latest
-- /reports/:status → List all the reports of all the patients filtered by a specific status
+- https://github.com/jaisreera/Hospital-API/blob/master/package.json/doctors/register → with username and password
+- https://github.com/jaisreera/Hospital-API/blob/master/package.json/doctors/login → returns the JWT to be used
+- https://github.com/jaisreera/Hospital-API/blob/master/package.json/patients/register
+- https://github.com/jaisreera/Hospital-API/blob/master/package.json/patients/:id/create_report
+- https://github.com/jaisreera/Hospital-API/blob/master/package.json/patients/:id/all_reports → List all the reports of a patient oldest to latest
+- https://github.com/jaisreera/Hospital-API/blob/master/package.json/reports/:status → List all the reports of all the patients filtered by a specific status
