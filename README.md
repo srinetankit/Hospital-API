@@ -20,3 +20,10 @@ Doctors can log in.
 2. Status - Can be either of: [Negative, Travelled-Quarantine, Symptoms-Quarantine, Positive-Admit]
 3. Date
 
+Routes:
+- https://hospital-api-dqk1.onrender.com/doctors/register → with username and password
+- https://hospital-api-dqk1.onrender.com/doctors/login → returns the JWT to be used
+- https://hospital-api-dqk1.onrender.com/patients/register
+- https://hospital-api-dqk1.onrender.com/patients/:id/create_report
+- https://hospital-api-dqk1.onrender.com/patients/:id/all_reports → List all the reports of a patient oldest to latest
+- https://hospital-api-dqk1.onrender.com/reports/:status → List all the reports of all the patients filtered by a specific status
