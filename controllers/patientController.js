@@ -1,8 +1,8 @@
-
+// Importing the report and user models for report and user-related actions
 const Report = require('../models/reports');
 const User = require('../models/user')
 
-
+// Controller function to handle patient registration
 module.exports.register = async function (req, res) {
     try {
 
@@ -19,6 +19,7 @@ module.exports.register = async function (req, res) {
 
         }
 
+        // Creating a new patient user with the provided data
         user = await User.create({
             username: req.body.number,
             name: req.body.name,
@@ -44,9 +45,12 @@ module.exports.register = async function (req, res) {
 
 }
 
+
+// Controller function to handle report creation for a patient
 module.exports.createReport = async function (req, res) {
     try {
 
+        // Finding the patient using the provided ID
         const user = await User.findById(req.params.id)
 
         if (!user) {
@@ -64,16 +68,18 @@ module.exports.createReport = async function (req, res) {
             date: new Date()
         })
 
+        // Adding the newly created report to the patients reports array
         user.reports.push(report)
 
 
-
+        // Returning a success status and the created report's data upon successful creation
         return res.status(201).json(
             {
                 message: 'Report created successfully',
                 data: report
             })
 
+        // Handling and logging any errors that occur during the process
     } catch (error) {
         console.log(error);
         return res.status(500).json(

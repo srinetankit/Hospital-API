@@ -1,5 +1,7 @@
+// Importing the mongoose library 
 const mongoose = require('mongoose');
 
+// Defining the schema for the reports model
 const reportSchema = new mongoose.Schema({
     createdByDoctor: {
         type: mongoose.Schema.Types.ObjectId,
@@ -24,6 +26,7 @@ const reportSchema = new mongoose.Schema({
 }
 )
 
+// Creating the Reports model using the defined schema
 const Reports = mongoose.model('Reports', reportSchema);
 
 module.exports = Reports;

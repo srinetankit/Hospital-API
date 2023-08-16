@@ -1,7 +1,8 @@
-
+// Importing the 'User' model and 'jsonwebtoken' library for user-related actions and authentication
 const User = require('../models/user')
 const jwt = require('jsonwebtoken');
 
+// Controller function to handle user registration
 module.exports.create = async function (req, res) {
     try {
 
@@ -15,6 +16,7 @@ module.exports.create = async function (req, res) {
 
         }
 
+        // Creating a new user with the provided data
         user = await User.create({
             username: req.body.username,
             password: req.body.password,
@@ -40,6 +42,7 @@ module.exports.create = async function (req, res) {
 }
 
 
+// Controller function to handle user login and session creation
 module.exports.createSession = async function (req, res) {
 
     try {
@@ -53,6 +56,7 @@ module.exports.createSession = async function (req, res) {
             )
         }
 
+        // If authentication is successful, create and return a JSON Web Token (JWT) for the user
         return res.status(200).json(
             {
                 message: "Sign in successful. Here is your token, please keep it safe",
