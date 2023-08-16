@@ -1,11 +1,14 @@
+// Importing the express library to create the server
 const express = require('express');
 const app = express();
 
-
+// The port on which the server will run
 const port = 8000;
+
+// Importing the mongoose connection configuration
 const db = require('./config/mongoose')
 
-//Used for Session Cookie
+// Importing passport and passport-jwt strategy for authentication
 const passport = require('passport');
 const passportJWT = require('./config/passport-jwt-strategy')
 
